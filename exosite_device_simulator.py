@@ -84,7 +84,7 @@ class FakeSocket():
 FLAG_CHECK_ACTIVATION = False
 
 state = ''
-temperature = 70
+temperature = 33
 humidity = 50
 uptime = 0
 connected = True
@@ -380,14 +380,14 @@ while LOOP:
 		connection = "Not Connected"
 
 
-	output_string = ("Connection: {0:s}, Run Time: {1:5d}, Temperature: {2:3.1f} F, Humidity: {3:3.1f} %").format(connection,uptime, temperature, humidity)
+	output_string = ("Connection: {0:s}, Run Time: {1:5d}, Temperature: {2:3.1f} C, Humidity: {3:3.1f} %").format(connection,uptime, temperature, humidity)
 	print (output_string)
 
 	if cik != None and FLAG_CHECK_ACTIVATION != True:
 		# GENERATE RANDOM TEMPERATURE VALUE
 
 		temperature = round(random.uniform(temperature-0.2,temperature+0.2), 1)
-		if temperature > 120: temperature = 120
+		if temperature > 40: temperature = 40
 		if temperature < 1: temperature = 1
 		# GENERATE RANDOM HUMIDITY VALUE
 		humidity = round(random.uniform(humidity-0.2,humidity+0.2), 1)
