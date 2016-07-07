@@ -50,7 +50,7 @@ except ImportError:
 #UNSET_PRODUCT_ID='YOUR_PRODUCT_ID_HERE'
 #productid = os.getenv('SIMULATOR_PRODUCT_ID', UNSET_PRODUCT_ID)
 vendorid = os.getenv('SIMULATOR_VENDOR_ID', 'hackntu2016')
-productid = os.getenv('SIMULATOR_PRODUCT_ID', 'gt202')
+productid = os.getenv('SIMULATOR_PRODUCT_ID', 'iot1001')
 #vendorid = 'hackntu2016'
 #productid = 'gt202'
 UNSET_SN = '1A:01:00:00:00:01'
