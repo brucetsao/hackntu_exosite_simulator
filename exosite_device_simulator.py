@@ -52,7 +52,7 @@ except ImportError:
 vendorid = os.getenv('SIMULATOR_VENDOR_ID', 'hackntu2016')
 productid = os.getenv('SIMULATOR_PRODUCT_ID', 'iot1001')
 #vendorid = 'hackntu2016'
-#productid = 'gt202'
+#productid = 'iot1001'
 UNSET_SN = '1A:01:00:00:00:01'
 #identifier = os.getenv('SIMULATOR_DEVICE_ID', '000001') # default identifier
 identifier = os.getenv('SIMULATOR_DEVICE_ID', UNSET_SN)
