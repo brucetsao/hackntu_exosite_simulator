@@ -394,7 +394,7 @@ while LOOP:
 		if humidity > 100: humidity = 100
 		if humidity < 1: humidity = 1
 
-		status,resp = WRITE('Temperature_MCP9800='+str(temperature)+'&Temperature_SHT30='+str(temperature)+'&Humidity_SHT30='+str(humidity))
+		status,resp = WRITE('Temperature_MCP9800='+str(temperature - 0.5)+'&Temperature_SHT30='+str(temperature)+'&Humidity_SHT30='+str(humidity))
 		if status == False and resp == 401:
 			FLAG_CHECK_ACTIVATION = True
 
