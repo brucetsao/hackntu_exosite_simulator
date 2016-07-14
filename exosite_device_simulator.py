@@ -385,16 +385,29 @@ while LOOP:
 
 	if cik != None and FLAG_CHECK_ACTIVATION != True:
 		# GENERATE RANDOM TEMPERATURE VALUE
-
 		temperature = round(random.uniform(temperature-0.2,temperature+0.2), 1)
 		if temperature > 40: temperature = 40
 		if temperature < 1: temperature = 1
+
 		# GENERATE RANDOM HUMIDITY VALUE
 		humidity = round(random.uniform(humidity-0.2,humidity+0.2), 1)
 		if humidity > 100: humidity = 100
 		if humidity < 1: humidity = 1
 
-		status,resp = WRITE('Temperature_MCP9800='+str(temperature - 0.5)+'&Temperature_SHT30='+str(temperature)+'&Humidity_SHT30='+str(humidity))
+		# GENERATE RANDOM MAGNETIC VALUE
+		mag_x = random.uniform(-5, 5);
+		mag_y = random.uniform(-5, 5);
+		mag_z = random.uniform(-5, 5);
+
+		# GENERATE RANDOM ACC VALUE
+		acc_x = random.uniform(-15, 15);
+		acc_y = random.uniform(-15, 15);
+		acc_z = random.uniform(-15, 15);
+
+
+		status,resp = WRITE('Temperature_MCP9800='+str(temperature - 0.5)+'&Temperature_SHT30='+str(temperature)+'&Humidity_SHT30='+str(humidity)
+							+'&CompassXRaw_AK9911='+str(mag_x)+'&CompassYRaw_AK9911='+str(mag_y)+'&CompassZRaw_AK9911='+str(mag_z)
+							+'&AccXRaw_ICM20648='+str(acc_x)+'&AccYRaw_ICM20648='+str(acc_y)+'&AccZRaw_ICM20648='+str(acc_z))
 		if status == False and resp == 401:
 			FLAG_CHECK_ACTIVATION = True
 
